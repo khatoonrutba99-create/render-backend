@@ -1,0 +1,138 @@
+.hero-section {
+  position: relative;
+  margin-bottom: 120px; /* Space for the overlapping widget */
+}
+
+.hero-banner {
+  position: relative;
+  height: 500px;
+  background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000&auto=format&fit=crop'); /* modern beautiful hospital setup */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(109, 40, 217, 0.95) 0%, rgba(139, 92, 246, 0.5) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  max-width: 600px;
+}
+
+.hero-title {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.quick-actions-container {
+  position: absolute;
+  bottom: -80px;
+  left: 0; right: 0;
+  z-index: 20;
+}
+
+.quick-actions-widget {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.action-box {
+  padding: 30px 20px;
+  border-right: 1px solid #eee;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.action-box:hover {
+  background-color: #faf5ff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+  z-index: 1;
+}
+
+.action-box:last-child {
+  border-right: none;
+}
+
+.action-box h3 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.action-box p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.action-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.highlight-box {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.highlight-box:hover {
+  background-color: var(--secondary-dark);
+}
+
+.highlight-box h3, .highlight-box p {
+  color: white;
+}
+
+.action-btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .quick-actions-widget {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-section {
+    margin-bottom: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .quick-actions-widget {
+    grid-template-columns: 1fr;
+  }
+  .hero-section {
+    margin-bottom: 400px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,71 @@
+.excellence-section {
+  background-color: var(--bg-color);
+}
+
+.excellence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.dept-card {
+  background: white;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dept-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.dept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.dept-card:hover::before {
+  transform: scaleX(1);
+}
+
+.dept-icon {
+  margin-bottom: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dept-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.dept-link-arrow {
+  display: inline-block;
+  opacity: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.dept-card:hover .dept-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
