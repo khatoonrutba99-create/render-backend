@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: hospital-management-system
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: "4000"
+      - key: MONGO_URL
+        value: "mongodb://RUTBA:RUTBA@ac-runkjka-shard-00-00.8qisagy.mongodb.net:27017,ac-runkjka-shard-00-01.8qisagy.mongodb.net:27017,ac-runkjka-shard-00-02.8qisagy.mongodb.net:27017/?ssl=true&replicaSet=atlas-6oye3p-shard-0&authSource=admin&appName=Cluster0"
+      - key: FRONTEND_URL_ONE
+        value: "https://hospital-management-system.onrender.com"
+      - key: DASHBOARD_URL
+        value: "https://hospital-management-system.onrender.com"
+      - key: JWT_SECRET_KEY
+        value: "hjvgfsredygykjhitydhg"
+      - key: JWT_EXPIRES
+        value: "7d"
+      - key: COOKIE_EXPIRES
+        value: "7"
+      - key: CLOUDINARY_CLOUD_NAME
+        value: "dwbsewdoc"
+      - key: CLOUDINARY_API_SECRET
+        value: "KbxqeWHUevwA89YozcsEgiKdjNU"
+      - key: CLOUDINARY_API_KEY
+        value: "244613753395313"
